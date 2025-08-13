@@ -13,10 +13,10 @@
     <nav>
       <ul>
         <li><a href="#home">Abhi Meena</a></li>
-        <li><a href="#home">Instagram</a></li>
-        <li><a href="#home">LinkedIn</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#skills">Skills</a></li>
         <li><a href="#my__work">My Work</a></li>
-        <li><a href="#home">Contact</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
     <div class="flex__container">
@@ -37,16 +37,25 @@
     <div class="flex__container">
       <div class="text__container">
         <h2>About Me</h2>
-        <p>I am a Java Full Stack Developer and recent B.Tech (Computer Science) graduate skilled in HTML, CSS,
-          JavaScript, React, GSAP for frontend and Java, Spring Boot, Hibernate, MySQL, PostgreSQL for backend. I love
-          creating applications that are both functional and visually engaging.</p>
-        <p>I have built projects like a <strong>To-Do App</strong>,<strong> Expense Tracker </strong>, and games such as
-          <strong> Word Guessing Game </strong> and <strong>Tenzies Game</strong>, and I’m currently developing a
-          real-time chat application.</p>
-        <p>As a fresher, I am eager to apply my skills and am actively seeking opportunities in software development.
+        <p>
+          I am a Java Full Stack Developer and recent B.Tech (Computer
+          Science) graduate skilled in HTML, CSS, JavaScript, React, GSAP for
+          frontend and Java, Spring Boot, Hibernate, MySQL, PostgreSQL for
+          backend. I love creating applications that are both functional and
+          visually engaging.
+        </p>
+        <p>
+          I have built projects like a <strong>To-Do App</strong>,<strong>
+            Expense Tracker </strong>, and games such as <strong> Word Guessing Game </strong> and
+          <strong>Tenzies Game</strong>, and I’m currently developing a
+          real-time chat application.
+        </p>
+        <p>
+          As a fresher, I am eager to apply my skills and am actively seeking
+          opportunities in software development.
         </p>
       </div>
-      <img src="./avatar2.png" alt="contact-img" width="300" />
+      <img src="./about.jpg" alt="contact-img" width="300" />
     </div>
   </section>
   <section id="skills">
@@ -89,17 +98,65 @@
   <section id="my__work">
     <h2>Recent Work</h2>
     <div class="grid__container">
-      <img src="./Images/todoApp.png" alt="tenzies" />
-      <img src="./Images/tenzies.png" alt="tenzies" />
-      <img src="./Images/wordGG03.png" alt="tenzies" />
-      <img src="./Images/photo.png" alt="tenzies" />
-      <img src="./Images/tenzies.png" alt="tenzies" />
+      <div class="wrapper"><img src="./Images/todoApp.png" alt="tenzies" width="200" height="200"/><div class="btn__container"><a href="">View Live</a><a href="">GitHub</a></div></div>
+      <div class="wrapper"><img src="./Images/tenzies.png" alt="tenzies" width="200" height="200"/><div class="btn__container"><a href="">View Live</a><a href="">GitHub</a></div></div>
+      <div class="wrapper"><img src="./Images/wordGG03.png" alt="tenzies" width="200" height="200"/><div class="btn__container"><a href="">View Live</a><a href="">GitHub</a></div></div>
+      <div class="wrapper"><img src="./Images/photo.png" alt="tenzies" width="200" height="200"/><div class="btn__container"><a href="">View Live</a><a href="">GitHub</a></div></div>
+      <div class="wrapper"><img src="./Images/tenzies.png" alt="tenzies" width="200" height="200"/><div class="btn__container"><a href="">View Live</a><a href="">GitHub</a></div></div>
     </div>
-    <a href="#" class="cta__button">More on GitHub</a>
+    <a href="https://github.com/abhimeena0702" class="cta__button">More on GitHub</a>
   </section>
+  <section id="contact">
+    <h2>Get In Touch</h2>
+    <div class="flex__container">
+      <form action="">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Your name" />
+        <label for="email">Eamil</label>
+        <input type="email" id="email" placeholder="Your Email address" />
+        <label for="message">Message</label>
+        <textarea name="message" id="message" placeholder="Your Message"></textarea>
+        <button class="cta__button secondary">Send Message</button>
+      </form>
+      <img src="./contact.png" alt="contact-img" width="500" />
+    </div>
+  </section>
+  <section id="footer">
+    <ul>
+      <li>
+        <a href="https://github.com/abhimeena0702"><img src="./Icons8/icons8-github-50.png" width="25" alt="" /></a>
+      </li>
+      <li>
+        <a href="www.linkedin.com/in/abhimeena0702"><img src="./Icons8/icons8-linkedin-50.png" width="25" alt="" /></a>
+      </li>
+      <li>
+        <a href="https://x.com/abhimshek?t=Gnga0aike0rxu8owMMwEbQ&s=09"><img src="./Icons8/icons8-x-50.png" width="25" alt="" /></a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/abhimeena__07?igsh=MW05MXN0enpnbjV5ZA=="><img src="./Icons8/icons8-instagram-50.png" width="25" alt="" /></a>
+      </li>
+    </ul>
+  </section>
+  <script src="https://unpkg.com/lenis@1.3.8/dist/lenis.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script>
+    // Initialize a new Lenis instance for smooth scrolling
+    const lenis = new Lenis();
+
+    // Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
+    lenis.on("scroll", ScrollTrigger.update);
+
+    // Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
+    // This ensures Lenis's smooth scroll animation updates on each GSAP tick
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000); // Convert time from seconds to milliseconds
+    });
+
+    // Disable lag smoothing in GSAP to prevent any delay in scroll animations
+    gsap.ticker.lagSmoothing(0);
+  </script>
   <script src="script.js"></script>
 </body>
 
