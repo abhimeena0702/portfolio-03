@@ -65,7 +65,9 @@ nav ul li:first-child {
     font-family: "MerryWeather", "Poppins";
 }
 
-#about .flex__container,.text__container,.grid__container{
+#about .flex__container,
+.text__container,
+.grid__container {
     overflow-x: hidden;
 }
 
@@ -91,6 +93,7 @@ header img {
     border-radius: 1em;
     object-fit: cover;
     object-position: top;
+    opacity: 0;
 }
 
 .text__container {
@@ -136,7 +139,7 @@ h2 {
 }
 
 section#about img {
-    border-radius: 0.5rem;
+    border-radius: 1rem;
 
 }
 
@@ -271,11 +274,12 @@ section#my__work {
 .btn__container a:hover {
     background: rgba(255, 255, 255, 0.25);
     transform: translateY(-2px);
-    color:  #00FF00;
+    color: #00FF00;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
-.btn__container a:nth-child(2):hover{
-    color:  #FF0000;
+
+.btn__container a:nth-child(2):hover {
+    color: #FF0000;
 }
 
 .btn__container a:active {
@@ -288,6 +292,7 @@ section#my__work {
 
 section#contact {
     background-color: var(--color-2);
+        position: relative;
 }
 
 #contact h2 {
@@ -325,12 +330,54 @@ input {
 }
 
 textarea {
+    padding-top: 0.5rem;
     height: 6rem;
 }
 
 button {
     border: none;
     font-size: inherit;
+}
+
+
+.message {
+    width: 250px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1em;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+    display: none;
+}
+
+.message p {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+
+}
+
+.spinner-gsap {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(0, 0, 0, 0.2);
+    border-top: 4px solid #ed7b3a;
+    border-bottom: 4px solid #ed7b3a;
+    border-left: transparent;
+    border-right: transparent;
+    border-radius: 50%;
 }
 
 /* contact end */
@@ -353,15 +400,16 @@ small {
     justify-content: center;
     gap: 2rem;
 }
-#footer li{
+
+#footer li {
     transition: all 300ms ease-in-out;
 }
-#footer li:hover{
+
+#footer li:hover {
     transform: scale(1.5) rotateY(540deg);
 }
 
 
-/* path("M 10,20 L 60,20 A 10,10 0,0,0 70,10 L 70,10 A 10,10 0,0,1 80,0 L 140,0 A 10,10 0,0,1 150,10 L 150,190 A 10,10 0,0,1 140,200 L 10,200 A 10,10 0,0,1 0,190 L 0,30 A 10,10 0,0,1 10,20 Z"); */
 
 
 /* footer end */
