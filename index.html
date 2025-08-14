@@ -1,163 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abhishek's Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abhishek's Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-  <header>
-    <nav>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#home">Abhi Meena</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#my__work">My Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="flex__container">
+        <img
+          src="./avatar1.png"
+          alt="profile-pic"
+          title="profile-pic"
+          width="300"
+          height="400"
+        />
+        <div class="text__container">
+          <h1>Hey Friends!</h1>
+          <p>
+            I'm Abhishek.I'm a <strong>Java Developer</strong>and
+            <strong>Web Designer</strong> with passion for creating exciting and
+            beautifull web Applications
+          </p>
+          <a href="#my__work" class="cta__button secondary">See my Work</a>
+          <a href="./abhishekResume.pdf" download class="cta__button"
+            >Download Resume</a
+          >
+        </div>
+      </div>
+    </header>
+    <section id="about">
+      <div class="flex__container">
+        <div class="text__container">
+          <h2>About Me</h2>
+          <p>
+            I am a Java Full Stack Developer and recent B.Tech (Computer
+            Science) graduate skilled in HTML, CSS, JavaScript, React, GSAP for
+            frontend and Java, Spring Boot, Hibernate, MySQL, PostgreSQL for
+            backend. I love creating applications that are both functional and
+            visually engaging.
+          </p>
+          <p>
+            I have built projects like a <strong>To-Do App</strong>,<strong>
+              Expense Tracker </strong
+            >, and games such as <strong> Word Guessing Game </strong> and
+            <strong>Tenzies Game</strong>, and I’m currently developing a
+            real-time chat application.
+          </p>
+          <p>
+            As a fresher, I am eager to apply my skills and am actively seeking
+            opportunities in software development.
+          </p>
+        </div>
+        <img src="./about.jpg" alt="contact-img" width="300" />
+      </div>
+    </section>
+    <section id="skills">
+      <h2>My Skills</h2>
+      <div class="flex__container">
+        <div class="techskills">
+          <img
+            class="react-3d1"
+            src="./techImages/reactjs.png"
+            alt=""
+            width="80"
+          />
+          <p class="description">ReactJs</p>
+        </div>
+        <div class="techskills">
+          <img class="react-3d2" src="./techImages/css.png" alt="" width="80" />
+          <p class="description">css</p>
+        </div>
+        <div class="techskills">
+          <img
+            class="react-3d3"
+            src="./techImages/html.png"
+            alt=""
+            width="80"
+          />
+          <p class="description">HTML</p>
+        </div>
+        <div class="techskills">
+          <img
+            class="react-3d4"
+            src="./techImages/javascript.png"
+            alt=""
+            width="80"
+          />
+          <p class="description">JavaScript</p>
+        </div>
+        <div class="techskills">
+          <img
+            class="react-3d1"
+            src="./techImages/java.png"
+            alt=""
+            width="80"
+          />
+          <p class="description">Java</p>
+        </div>
+        <div class="techskills">
+          <img
+            class="react-3d2"
+            src="./techImages/springBoot.png"
+            alt=""
+            width="80"
+          />
+          <p class="description">Spring Boot</p>
+        </div>
+        <div class="techskills">
+          <img
+            class="react-3d3"
+            src="./techImages/hibernate.png"
+            alt=""
+            width="80"
+          />
+          <p class="description">Hibernate</p>
+        </div>
+        <div class="techskills">
+          <img class="react-3d4" src="./techImages/git.png" alt="" width="80" />
+          <p class="description">Git</p>
+        </div>
+      </div>
+    </section>
+    <section id="my__work">
+      <h2>Recent Work</h2>
+      <div class="grid__container">
+        <div class="wrapper">
+          <img
+            src="./Images/todoApp.png"
+            alt="tenzies"
+            width="200"
+            height="200"
+          />
+          <div class="btn__container">
+            <a href="">View Live</a><a href="">GitHub</a>
+          </div>
+        </div>
+        <div class="wrapper">
+          <img
+            src="./Images/tenzies.png"
+            alt="tenzies"
+            width="200"
+            height="200"
+          />
+          <div class="btn__container">
+            <a href="">View Live</a><a href="">GitHub</a>
+          </div>
+        </div>
+        <div class="wrapper">
+          <img
+            src="./Images/wordGG03.png"
+            alt="tenzies"
+            width="200"
+            height="200"
+          />
+          <div class="btn__container">
+            <a href="">View Live</a><a href="">GitHub</a>
+          </div>
+        </div>
+        <div class="wrapper">
+          <img
+            src="./Images/photo.png"
+            alt="tenzies"
+            width="200"
+            height="200"
+          />
+          <div class="btn__container">
+            <a href="">View Live</a><a href="">GitHub</a>
+          </div>
+        </div>
+        <div class="wrapper">
+          <img
+            src="./Images/tenzies.png"
+            alt="tenzies"
+            width="200"
+            height="200"
+          />
+          <div class="btn__container">
+            <a href="">View Live</a><a href="">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <a href="https://github.com/abhimeena0702" class="cta__button"
+        >More on GitHub</a
+      >
+    </section>
+    <section id="contact">
+      <h2>Get In Touch</h2>
+      <div class="flex__container">
+        <form action="" id="contact__form">
+          <div class="message">
+            <div class="spinner-gsap"></div>
+            <p>Please Wait</p>
+          </div>
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" placeholder="Your name" />
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" placeholder="Your Email address" />
+          <label for="message">Message</label>
+          <textarea
+            name="message"
+            id="message"
+            placeholder="Your Message"
+          ></textarea>
+          <button type="submit" class="cta__button secondary">Send Message</button>
+        </form>
+        <img src="./contact.png" alt="contact-img" width="500" />
+      </div>
+    </section>
+    <section id="footer">
       <ul>
-        <li><a href="#home">Abhi Meena</a></li>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#my__work">My Work</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li>
+          <a href="https://github.com/abhimeena0702"
+            ><img src="./Icons8/icons8-github-50.png" width="25" alt=""
+          /></a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/abhimeena0702?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+            ><img src="./Icons8/icons8-linkedin-50.png" width="25" alt=""
+          /></a>
+        </li>
+        <li>
+          <a href="https://x.com/abhimshek?t=Gnga0aike0rxu8owMMwEbQ&s=09"
+            ><img src="./Icons8/icons8-x-50.png" width="25" alt=""
+          /></a>
+        </li>
+        <li>
+          <a
+            href="https://www.instagram.com/abhimeena__07?igsh=MW05MXN0enpnbjV5ZA=="
+            ><img src="./Icons8/icons8-instagram-50.png" width="25" alt=""
+          /></a>
+        </li>
       </ul>
-    </nav>
-    <div class="flex__container">
-      <img src="./avatar1.png" alt="profile-pic" title="profile-pic" width="300" height="400" />
-      <div class="text__container">
-        <h1>Hey Friends!</h1>
-        <p>
-          I'm Abhishek.I'm a <strong>Java Developer</strong>and
-          <strong>Web Designer</strong> with passion for creating exciting and
-          beautifull web Applications
-        </p>
-        <a href="#" class="cta__button">Follow Me on Instagram</a>
-        <a href="#" class="cta__button secondary">See my Work</a>
-      </div>
-    </div>
-  </header>
-  <section id="about">
-    <div class="flex__container">
-      <div class="text__container">
-        <h2>About Me</h2>
-        <p>
-          I am a Java Full Stack Developer and recent B.Tech (Computer
-          Science) graduate skilled in HTML, CSS, JavaScript, React, GSAP for
-          frontend and Java, Spring Boot, Hibernate, MySQL, PostgreSQL for
-          backend. I love creating applications that are both functional and
-          visually engaging.
-        </p>
-        <p>
-          I have built projects like a <strong>To-Do App</strong>,<strong>
-            Expense Tracker </strong>, and games such as <strong> Word Guessing Game </strong> and
-          <strong>Tenzies Game</strong>, and I’m currently developing a
-          real-time chat application.
-        </p>
-        <p>
-          As a fresher, I am eager to apply my skills and am actively seeking
-          opportunities in software development.
-        </p>
-      </div>
-      <img src="./about.jpg" alt="contact-img" width="300" />
-    </div>
-  </section>
-  <section id="skills">
-    <h2>My Skills</h2>
-    <div class="flex__container">
-      <div class="techskills">
-        <img class="react-3d1" src="./techImages/reactjs.png" alt="" width="80" />
-        <p class="description">ReactJs</p>
-      </div>
-      <div class="techskills">
-        <img class="react-3d2" src="./techImages/css.png" alt="" width="80" />
-        <p class="description">css</p>
-      </div>
-      <div class="techskills">
-        <img class="react-3d3" src="./techImages/html.png" alt="" width="80" />
-        <p class="description">HTML</p>
-      </div>
-      <div class="techskills">
-        <img class="react-3d4" src="./techImages/javascript.png" alt="" width="80" />
-        <p class="description">JavaScript</p>
-      </div>
-      <div class="techskills">
-        <img class="react-3d1" src="./techImages/java.png" alt="" width="80" />
-        <p class="description">Java</p>
-      </div>
-      <div class="techskills">
-        <img class="react-3d2" src="./techImages/springBoot.png" alt="" width="80" />
-        <p class="description">Spring Boot</p>
-      </div>
-      <div class="techskills">
-        <img class="react-3d3" src="./techImages/hibernate.png" alt="" width="80" />
-        <p class="description">Hibernate</p>
-      </div>
-      <div class="techskills">
-        <img class="react-3d4" src="./techImages/git.png" alt="" width="80" />
-        <p class="description">Git</p>
-      </div>
-    </div>
-  </section>
-  <section id="my__work">
-    <h2>Recent Work</h2>
-    <div class="grid__container">
-      <div class="wrapper"><img src="./Images/todoApp.png" alt="tenzies" width="200" height="200"/><div class="btn__container"><a href="">View Live</a><a href="">GitHub</a></div></div>
-      <div class="wrapper"><img src="./Images/tenzies.png" alt="tenzies" width="200" height="200"/><div class="btn__container"><a href="">View Live</a><a href="">GitHub</a></div></div>
-      <div class="wrapper"><img src="./Images/wordGG03.png" alt="tenzies" width="200" height="200"/><div class="btn__container"><a href="">View Live</a><a href="">GitHub</a></div></div>
-      <div class="wrapper"><img src="./Images/photo.png" alt="tenzies" width="200" height="200"/><div class="btn__container"><a href="">View Live</a><a href="">GitHub</a></div></div>
-      <div class="wrapper"><img src="./Images/tenzies.png" alt="tenzies" width="200" height="200"/><div class="btn__container"><a href="">View Live</a><a href="">GitHub</a></div></div>
-    </div>
-    <a href="https://github.com/abhimeena0702" class="cta__button">More on GitHub</a>
-  </section>
-  <section id="contact">
-    <h2>Get In Touch</h2>
-    <div class="flex__container">
-      <form action="">
-        <label for="name">Name</label>
-        <input type="text" id="name" placeholder="Your name" />
-        <label for="email">Eamil</label>
-        <input type="email" id="email" placeholder="Your Email address" />
-        <label for="message">Message</label>
-        <textarea name="message" id="message" placeholder="Your Message"></textarea>
-        <button class="cta__button secondary">Send Message</button>
-      </form>
-      <img src="./contact.png" alt="contact-img" width="500" />
-    </div>
-  </section>
-  <section id="footer">
-    <ul>
-      <li>
-        <a href="https://github.com/abhimeena0702"><img src="./Icons8/icons8-github-50.png" width="25" alt="" /></a>
-      </li>
-      <li>
-        <a href="www.linkedin.com/in/abhimeena0702"><img src="./Icons8/icons8-linkedin-50.png" width="25" alt="" /></a>
-      </li>
-      <li>
-        <a href="https://x.com/abhimshek?t=Gnga0aike0rxu8owMMwEbQ&s=09"><img src="./Icons8/icons8-x-50.png" width="25" alt="" /></a>
-      </li>
-      <li>
-        <a href="https://www.instagram.com/abhimeena__07?igsh=MW05MXN0enpnbjV5ZA=="><img src="./Icons8/icons8-instagram-50.png" width="25" alt="" /></a>
-      </li>
-    </ul>
-  </section>
-  <script src="https://unpkg.com/lenis@1.3.8/dist/lenis.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
-  <script>
-    // Initialize a new Lenis instance for smooth scrolling
-    const lenis = new Lenis();
+    </section>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.3.8/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+    <script>
+      // Initialize a new Lenis instance for smooth scrolling
+      const lenis = new Lenis();
 
-    // Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
-    lenis.on("scroll", ScrollTrigger.update);
+      // Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
+      lenis.on("scroll", ScrollTrigger.update);
 
-    // Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
-    // This ensures Lenis's smooth scroll animation updates on each GSAP tick
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000); // Convert time from seconds to milliseconds
-    });
+      // Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
+      // This ensures Lenis's smooth scroll animation updates on each GSAP tick
+      gsap.ticker.add((time) => {
+        lenis.raf(time * 1000); // Convert time from seconds to milliseconds
+      });
 
-    // Disable lag smoothing in GSAP to prevent any delay in scroll animations
-    gsap.ticker.lagSmoothing(0);
-  </script>
-  <script src="script.js"></script>
-</body>
-
+      // Disable lag smoothing in GSAP to prevent any delay in scroll animations
+      gsap.ticker.lagSmoothing(0);
+    </script>
+    <script src="script.js"></script>
+  </body>
 </html>
