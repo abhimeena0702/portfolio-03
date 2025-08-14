@@ -65,7 +65,9 @@ nav ul li:first-child {
     font-family: "MerryWeather", "Poppins";
 }
 
-
+#about .flex__container,.text__container,.grid__container{
+    overflow-x: hidden;
+}
 
 header,
 section {
