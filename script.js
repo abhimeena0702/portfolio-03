@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", (event) => {
-  gsap.registerPlugin(ScrollTrigger);
-  gsap.set("header img", { yPercent: -150 });
+  gsap.registerPlugin(ScrollTrigger, SplitText);
+  gsap.set("header img", { yPercent: -150, opacity: 1 });
   //  home screen image animation start
   const tl = gsap.timeline();
   tl.to("header img", {
@@ -86,51 +86,46 @@ document.addEventListener("DOMContentLoaded", (event) => {
       scrollTrigger: {
         trigger: "#about",
         start: "top 80%",
-        end: "bottom bottom",
+        end: "bottom 110%",
         scrub: 1,
       },
     });
-    tlDesktop.from(textEleOfAbout, { xPercent: -100, opacity: 0, stagger: 0.1 });
-    tlDesktop.from(aboutImg, { xPercent:100, opacity: 0, scale: 0 }, 0);
+    tlDesktop.from(textEleOfAbout, {
+      xPercent: -100,
+      opacity: 0,
+      stagger: 0.1,
+    });
+    tlDesktop.from(aboutImg, { xPercent: 100, opacity: 0, scale: 0 }, 0);
   });
 
   gsap.matchMedia().add("(max-width: 987px)", () => {
-    // Mobile animation
-     // Animate each paragraph independently
-  textEleOfAbout.forEach((el, i) => {
-    gsap.from(el, {
-      xPercent: i % 2 === 0 ? -100 : 100,
-      opacity: 0,
-      duration: 1,
-      scrollTrigger: {
-        trigger: el,
-        start: "top 80%",
-        end: "bottom 60%",
-        scrub: true,
-      },
+    // para animation
+
+    textEleOfAbout.forEach((para) => {
+      let split = SplitText.create(para, {
+        type: "lines",
+        autoSplit: true,
+        onSplit: (self) => {
+          return gsap.from(self.lines, {
+            // x:(i)=>i%2===0?-50:50,
+            autoAlpha: 0.01,
+            stagger: {amount:0.5},
+            scrollTrigger: {
+              trigger: para,
+              start: "top 80%",
+              end: "bottom 80%",
+              toggleActions: "play none none reverse",
+            },
+          });
+        },
+      });
     });
   });
+  // about end
 
-  // Animate image separately
-  gsap.from(aboutImg, {
-    x: 200,
-    opacity: 0.5,
-    scale: 0,
-    duration: 1,
-    scrollTrigger: {
-      trigger: aboutImg,
-      start: "top 90%",
-      end: "bottom 80%",
-      scrub: true,
-    },
-  });
-  });
-
-  // about end 
-
-  // recent work animation begin 
+  // recent work animation begin
   const workItems = document.querySelectorAll("#my__work .wrapper");
-  
+
   gsap.matchMedia().add("(min-width: 641px)", () => {
     // Animation for large screens (desktop)
     workItems.forEach((el) => {
@@ -149,26 +144,90 @@ document.addEventListener("DOMContentLoaded", (event) => {
       });
     });
   });
-  
+
   gsap.matchMedia().add("(max-width: 640px)", () => {
-    // Animation for small screens (mobile)
     workItems.forEach((el, i) => {
       let x = i % 2 === 0 ? -100 : 100;
       gsap.set(el, { opacity: 0, xPercent: x });
+      // Animate with toggleActions
       gsap.to(el, {
+        xPercent: 0,
+        opacity: 1,
+        duration: 0.3,
+        ease: "power1.out",
         scrollTrigger: {
           trigger: el,
           start: "top 80%",
-          end: "center 70%",
-          scrub: true,
+          toggleActions: "play none none reverse", // onEnter, onLeave, onEnterBack, onLeaveBack
           markers: false,
         },
-        xPercent: 0,
-        opacity: 1,
-        duration: 0.8,
-        ease: "power1.out",
       });
     });
   });
   // Recent work animation end
 });
+
+
+
+// form handling start 
+gsap.to(".spinner-gsap", {
+  rotation: 360,
+  repeat: -1,
+  ease: "linear",
+  duration: 1,
+  transformOrigin: "50% 50%",
+});
+const publicKey = "hK4wvV_-LnKifLW3_";
+const serviceID = "service_8ceb21n";
+const templateID = "template_ck8iejl";
+
+// Initialize EmailJS
+(function () {
+  emailjs.init(publicKey);
+})();
+
+// Form handling
+const form = document.getElementById("contact__form");
+const messageBox = document.querySelector(".message");
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  messageBox.style.display = "flex";
+  emailjs.sendForm(serviceID, templateID, form).then(
+    () => {
+      messageBox.children[0].style.display = "none";
+      messageBox.children[1].textContent =
+        "Your message has been sent successfully!";
+      form.reset();
+      // Fade out on success
+      setTimeout(() => {
+        gsap.to(messageBox, {
+          opacity: 0,
+          duration: 0.5,
+          onComplete: () => {
+            messageBox.style.display = "none";
+            messageBox.style.opacity = 1;
+          },
+        });
+      }, 2000);
+    },
+    (err) => {
+      console.error("EmailJS error:", err);
+      messageBox.children[0].style.display = "none";
+      messageBox.textContent = "Something went wrong. Please try again.";
+      // Fade out on failure
+      setTimeout(() => {
+        gsap.to(messageBox, {
+          opacity: 0,
+          duration: 0.5,
+          onComplete: () => {
+            messageBox.style.display = "none";
+            messageBox.style.opacity = 1;
+          },
+        });
+      }, 2000);
+    }
+  );
+  messageBox.children[0].style.display = "block";
+  messageBox.children[1].textContent = "Please Wait";
+});
+// form handling end
