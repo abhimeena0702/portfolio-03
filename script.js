@@ -57,22 +57,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
     ease: "linear",
     transformOrigin: "center center",
   });
-
-  gsap.from(".techSkills", {
-    width: "0",
-    scrollTrigger: {
-      trigger: "#skills",
-      start: "top center",
-      end: "center center",
-    },
-  });
   // skills animation end
+  // skills scroll animation begin
   gsap.from(".techskills", {
     scrollTrigger: {
       trigger: "#skills h2",
-      start: "bottom bottom",
+      start: "top 70%",
       endTrigger: "#skills",
-      end: "bottom 70%",
+      end: "bottom 75%",
       scrub: 2,
     },
     y: 50,
@@ -81,8 +73,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     ease: "power3.out",
     stagger: 0.3,
   });
-  // skills scroll animation begin
-  // ai code is here
+  // skills scroll animation end
+  // about begin
   const textEleOfAbout = document.querySelectorAll(
     "#about .text__container > p "
   );
@@ -98,32 +90,47 @@ document.addEventListener("DOMContentLoaded", (event) => {
         scrub: 1,
       },
     });
-    tlDesktop.from(textEleOfAbout, { xPercent: -50, opacity: 0, stagger: 0.1 });
-    tlDesktop.from(aboutImg, { x: 200, opacity: 0, scale: 0 }, 0);
+    tlDesktop.from(textEleOfAbout, { xPercent: -100, opacity: 0, stagger: 0.1 });
+    tlDesktop.from(aboutImg, { xPercent:100, opacity: 0, scale: 0 }, 0);
   });
 
   gsap.matchMedia().add("(max-width: 987px)", () => {
     // Mobile animation
-    const tlMobile = gsap.timeline({
+     // Animate each paragraph independently
+  textEleOfAbout.forEach((el, i) => {
+    gsap.from(el, {
+      xPercent: i % 2 === 0 ? -100 : 100,
+      opacity: 0,
+      duration: 1,
       scrollTrigger: {
-        trigger: "#about",
+        trigger: el,
         start: "top 80%",
-        end: "bottom 100%",
-        scrub: 1,
+        end: "bottom 60%",
+        scrub: true,
       },
     });
-    tlMobile.from(textEleOfAbout, {
-      xPercent: (i) => (i % 2 === 0 ? -100 : 100),
-      opacity: 0,
-      stagger: 0.1,
-    });
-    tlMobile.from(aboutImg, { x: 200, opacity: 0.5, scale: 0 }, "<0.25");
   });
 
-  // skills scroll animation end
+  // Animate image separately
+  gsap.from(aboutImg, {
+    x: 200,
+    opacity: 0.5,
+    scale: 0,
+    duration: 1,
+    scrollTrigger: {
+      trigger: aboutImg,
+      start: "top 90%",
+      end: "bottom 80%",
+      scrub: true,
+    },
+  });
+  });
 
+  // about end 
+
+  // recent work animation begin 
   const workItems = document.querySelectorAll("#my__work .wrapper");
-
+  
   gsap.matchMedia().add("(min-width: 641px)", () => {
     // Animation for large screens (desktop)
     workItems.forEach((el) => {
@@ -142,7 +149,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       });
     });
   });
-
+  
   gsap.matchMedia().add("(max-width: 640px)", () => {
     // Animation for small screens (mobile)
     workItems.forEach((el, i) => {
